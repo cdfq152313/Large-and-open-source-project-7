@@ -1,2 +1,4 @@
-This is Large-and-open-source-project team7's repository
-========================================================
+Team 7
+======
+
+This is Large and open source course project's repository
