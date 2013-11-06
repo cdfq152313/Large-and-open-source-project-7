@@ -11,12 +11,12 @@ Project Goal
 
 Data Source
 -----------
-1. 各大新聞網站（如:Yahoo ETtoday)
-2. PTT或是非官方的網頁版PTT
+1. 各大新聞網站（如: [Yahoo](http://tw.news.yahoo.com/)、[ETtoday](http://www.ettoday.net/))
+2. PTT或是[非官方的網頁版PTT](http://disp.cc/b/)
 
 Motivation
 ----------
-*  觀察現在素質低落的網路記者抄新聞的現象 然後笑一笑
+*  觀察現在素質低落的網路記者抄新聞的現象，然後笑一笑
 
 Develop Environment
 -------------------
