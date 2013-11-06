@@ -12,6 +12,7 @@ Data Source
 -----------
 1. 各大新聞網站（如:Yahoo ETtoday)
 2. PTT或是非官方的網頁版PTT
+
 Motivation
 ----------
 *  觀察現在素質低落的網路記者抄新聞的現象 然後笑一笑
