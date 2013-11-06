@@ -3,7 +3,7 @@
 
 Introduction
 ------------
-這是這學期大型開源軟體課程的Project，我們大算利用網路上的Data作些有趣的分析
+這是這學期大型開源軟體課程的Project，我們打算利用網路上的Data作些有趣的分析
 
 Project Goal
 ------------
