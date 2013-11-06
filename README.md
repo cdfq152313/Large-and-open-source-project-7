@@ -8,6 +8,7 @@ Introduction
 Project Goal
 ------------
 看看現在的新聞記者有多少拿PTT的文當新聞
+
 Data Source
 -----------
 1. 各大新聞網站（如:Yahoo ETtoday)
@@ -16,8 +17,6 @@ Data Source
 Motivation
 ----------
 *  觀察現在素質低落的網路記者抄新聞的現象 然後笑一笑
-
-
 
 Develop Environment
 -------------------
@@ -46,7 +45,7 @@ Implementation Detail
   會設計一個評量規則，為每個詞彙打分，藉以判斷其
   相同程度。
 
-
 Team Members
 ------------
 詹上潁、曾與聖、鄭翔元、荊士懷
+
