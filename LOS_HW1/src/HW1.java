@@ -40,6 +40,9 @@ public class HW1 {
 	 * 新聞抓取物件產生
 	 */
 	public static class News_factory{
+		/**
+		 * 產生抓取ETtoday新聞的物件
+		 */
 		public static ETtodayCrawler get_ETtoday(){
 			ETtodayCrawler crawler = new ETtodayCrawler();
 			crawler.connecter();
@@ -49,6 +52,9 @@ public class HW1 {
 			
 			return crawler;
 		}
+		/**
+		 * 產生抓取Ptt新聞的物件
+		 */
 		public static PttCrawler get_Ptt(){
 			PttCrawler crawler = new PttCrawler();
 			
