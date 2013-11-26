@@ -21,6 +21,10 @@ import java.sql.Statement;
  * 功能:
  * 1.將ETtoday上的新聞標題擷取出
  * 2.儲存至mySQL
+ * 
+ * Pattern:
+ * Simple Factory，使用者可以產出PTT或是ETtoday來源的物件
+ * 產出新聞抓取的物件集中在News_factory
  */
 public class HW1 {
 
@@ -29,20 +33,38 @@ public class HW1 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Crawler crawler = new Crawler();
-		crawler.connecter();
-		crawler.spliter();
-		crawler.printer();
-		crawler.mySQL_storage();
-
+		ETtodayCrawler ET_news = News_factory.get_ETtoday();
+		PttCrawler Ptt_news = News_factory.get_Ptt();
+	}
+	/**
+	 * 新聞抓取物件產生
+	 */
+	public static class News_factory{
+		public static ETtodayCrawler get_ETtoday(){
+			ETtodayCrawler crawler = new ETtodayCrawler();
+			crawler.connecter();
+			crawler.spliter();
+			crawler.printer();
+			crawler.mySQL_storage();
+			
+			return crawler;
+		}
+		public static PttCrawler get_Ptt(){
+			PttCrawler crawler = new PttCrawler();
+			
+			return crawler;
+		}
 	}
 }
 
+class PttCrawler{
+	
+}
 /**
  * @author chi
  * @param data 儲存新聞標題
  */
-class Crawler{
+class ETtodayCrawler{
 	private List<String> data = new ArrayList<String>();
 	/**
 	 * @param s 含有新聞標題的regular expression
