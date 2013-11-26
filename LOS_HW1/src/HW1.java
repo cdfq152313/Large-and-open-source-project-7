@@ -73,9 +73,9 @@ class PttCrawler{
 class ETtodayCrawler{
 	private List<String> data = new ArrayList<String>();
 	/**
-	 * @param s 含有新聞標題的regular expression
 	 * 連接ETtoday的新聞網頁
 	 * 並利用regular expression取得該頁含有新聞標題的html碼
+	 * @param s 含有新聞標題的regular expression
 	 */
 	public void connecter(){
 		String s = "<h3><a href=\".*\">.*</a></h3>$";
@@ -110,9 +110,9 @@ class ETtodayCrawler{
 		}
 	}
 	/**
+	 * 將html標籤與新聞標題分開
 	 * @param s 儲存第一次將html標籤分開與新聞標題(前段)
 	 * @param t 儲存第二次將html標籤分開與新聞標題(後段)
-	 * 將html標籤與新聞標題分開
 	 */
 	public void spliter(){
 		String[] s;
@@ -133,11 +133,11 @@ class ETtodayCrawler{
         }
 	}
 	/**
+	 * 將找到的新聞標題儲存至mySQL
 	 * @param driver 載入與註冊JDBC驅動程式
 	 * @param url 提供JDBC URL
 	 * @param user mySQL帳號
 	 * @param password mySQL密碼
-	 * 將找到的新聞標題儲存至mySQL
 	 */
 	public void mySQL_storage(){
 		String driver = "com.mysql.jdbc.Driver"; 
