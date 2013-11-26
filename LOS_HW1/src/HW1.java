@@ -47,7 +47,7 @@ public class HW1 {
 			ETtodayCrawler crawler = new ETtodayCrawler();
 			crawler.connecter();
 			crawler.spliter();
-			crawler.printer();
+			//crawler.printer();
 			crawler.mySQL_storage();
 			
 			return crawler;
