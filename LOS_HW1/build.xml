@@ -30,7 +30,7 @@
         <delete dir="bin"/>
     </target>
     <target depends="clean" name="cleanall"/>
-    <!--target depends="build-subprojects,build-project" name="build"/-->
+    <target depends="build-subprojects,build-project" name="build"/>
     
     <target name="dist" depends="build-subprojects,build-project" description="generate the distribution" >
         <!-- 創建放置jar檔目錄 -->
