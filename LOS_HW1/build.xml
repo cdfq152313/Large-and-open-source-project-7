@@ -9,6 +9,7 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
+    
     <property name="dist" location="dist"/>
     
     <path id="LOS_HW1.classpath">
@@ -30,15 +31,6 @@
     </target>
     <target depends="clean" name="cleanall"/>
     <!--target depends="build-subprojects,build-project" name="build"/-->
-    <target depends="dist" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
-            <classpath refid="LOS_HW1.classpath"/>
-        </javac>
-    </target>
     
     <target name="dist" depends="build-subprojects,build-project" description="generate the distribution" >
         <!-- 創建放置jar檔目錄 -->
@@ -47,7 +39,15 @@
         <!-- 把build目錄內的所有檔案結構打包成一個TestProject.jar檔  -->
         <jar jarfile="${dist}/lib/${ant.project.name}.jar" basedir="bin"/>
     </target>
-      
+    
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="LOS_HW1.classpath"/>
+        </javac>
+    </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
     <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
         <copy todir="${ant.library.dir}">
