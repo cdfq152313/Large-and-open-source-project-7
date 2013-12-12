@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="chi" name="CrawlerTest" tests="3" time="0.233" timestamp="2013-12-11T09:02:41">
+<testsuite errors="0" failures="1" hostname="chi" name="CrawlerTest" tests="3" time="0.534" timestamp="2013-12-11T15:05:08">
   <properties>
     <property name="java.vendor" value="Oracle Corporation" />
     <property name="env.USERDOMAIN_ROAMINGPROFILE" value="chi" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
     <property name="env.PROMPT" value="$P$G" />
-    <property name="dist" value="D:\Program\JAVA\LOS_HW1\dist" />
     <property name="os.name" value="Windows 8" />
     <property name="env.FP_NO_HOST_CHECK" value="NO" />
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_45\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_45\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_45\jre\classes" />
@@ -54,11 +53,11 @@
     <property name="env.ProgramW6432" value="C:\Program Files" />
     <property name="path.separator" value=";" />
     <property name="java.vm.version" value="24.45-b08" />
-    <property name="user.variant" value="" />
     <property name="env.USERPROFILE" value="C:\Users\士懷" />
+    <property name="user.variant" value="" />
     <property name="ant.library.dir" value="D:\eclipse\plugins\org.apache.ant_1.8.3.v201301120609\lib" />
     <property name="junit.output.dir" value="junit" />
-    <property name="env.JAVA_HOME" value="C:\Program Files\Java\jdk1.7.0_45\bin;" />
+    <property name="env.JAVA_HOME" value="C:\Program Files\Java\jdk1.7.0_45" />
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
     <property name="env.TMP" value="C:\Users\士懷\AppData\Local\Temp" />
     <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
@@ -72,21 +71,21 @@
     <property name="java.specification.vendor" value="Oracle Corporation" />
     <property name="env.CLASSPATH" value=".;C:\Program Files (x86)\QuickTime\QTSystem\QTJava.zip" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_45\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/bin/server;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/bin;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/lib/amd64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\MATLAB\R2012b\runtime\win64;C:\Program Files\MATLAB\R2012b\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\CodeBlocks\MinGW\bin;C:\Program Files\Java\jdk1.7.0_45\bin;C:\AppServ\Apache2.2\bin;C:\AppServ\php5;C:\AppServ\MySQL\bin;;D:\eclipse;;." />
     <property name="env.NUMBER_OF_PROCESSORS" value="4" />
-    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_45\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/bin/server;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/bin;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/lib/amd64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\MATLAB\R2012b\runtime\win64;C:\Program Files\MATLAB\R2012b\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\CodeBlocks\MinGW\bin;C:\Program Files\Java\jdk1.7.0_45\bin;C:\apache-ant-1.9.2\bin;C:\AppServ\Apache2.2\bin;C:\AppServ\php5;C:\AppServ\MySQL\bin;;D:\eclipse;;." />
     <property name="env.VXIPNPPATH" value="C:\Program Files (x86)\IVI Foundation\VISA\" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
-    <property name="ant.version" value="Apache Ant(TM) version 1.8.3 compiled on February 26 2012" />
     <property name="java.class.path" value="D:\Program\JAVA\LOS_HW1\bin;D:\Program\JAVA\LOS_HW1\libs\hamcrest-core-1.3.jar;D:\Program\JAVA\LOS_HW1\libs\junit-4.11.jar;D:\Program\JAVA\LOS_HW1\libs\mysql-connector-java.jar;D:\Program\JAVA\LOS_HW1;C:\Program Files (x86)\QuickTime\QTSystem\QTJava.zip;D:\eclipse\plugins\org.apache.ant_1.8.3.v201301120609\lib\ant-launcher.jar;D:\eclipse\plugins\org.apache.ant_1.8.3.v201301120609\lib\ant.jar;D:\eclipse\plugins\org.apache.ant_1.8.3.v201301120609\lib\ant-junit.jar;D:\eclipse\plugins\org.apache.ant_1.8.3.v201301120609\lib\ant-junit4.jar" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner CrawlerTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Program\JAVA\LOS_HW1\junit\TEST-CrawlerTest.xml crashfile=D:\Program\JAVA\LOS_HW1\junitvmwatcher8165501329401541952.properties propsfile=D:\Program\JAVA\LOS_HW1\junit1751371805164740611.properties" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.3 compiled on February 26 2012" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner CrawlerTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Program\JAVA\LOS_HW1\junit\TEST-CrawlerTest.xml crashfile=D:\Program\JAVA\LOS_HW1\junitvmwatcher2940645231911316545.properties propsfile=D:\Program\JAVA\LOS_HW1\junit6219456692925900391.properties" />
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
-    <property name="env.windir" value="C:\WINDOWS" />
     <property name="env.LOGONSERVER" value="\\CHI" />
+    <property name="env.windir" value="C:\WINDOWS" />
     <property name="env.PROCESSOR_ARCHITECTURE" value="AMD64" />
     <property name="java.vm.specification.version" value="1.7" />
-    <property name="sun.os.patch.level" value="" />
     <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="" />
     <property name="debuglevel" value="source,lines,vars" />
     <property name="env.ProgramFiles" value="C:\Program Files" />
     <property name="env.ANT_HOME" value="D:\eclipse\plugins\org.apache.ant_1.8.3.v201301120609" />
@@ -104,7 +103,7 @@
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
     <property name="env.PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC" />
     <property name="ant.file.type.LOS_HW1" value="file" />
-    <property name="env.Path" value="C:/Program Files/Java/jdk1.7.0_45/bin/../jre/bin/server;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/bin;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/lib/amd64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\MATLAB\R2012b\runtime\win64;C:\Program Files\MATLAB\R2012b\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\CodeBlocks\MinGW\bin;C:\Program Files\Java\jdk1.7.0_45\bin;C:\AppServ\Apache2.2\bin;C:\AppServ\php5;C:\AppServ\MySQL\bin;;D:\eclipse;" />
+    <property name="env.Path" value="C:/Program Files/Java/jdk1.7.0_45/bin/../jre/bin/server;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/bin;C:/Program Files/Java/jdk1.7.0_45/bin/../jre/lib/amd64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec MyWinLocker\x64;C:\Program Files (x86)\EgisTec MyWinLocker\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\MATLAB\R2012b\runtime\win64;C:\Program Files\MATLAB\R2012b\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\CodeBlocks\MinGW\bin;C:\Program Files\Java\jdk1.7.0_45\bin;C:\apache-ant-1.9.2\bin;C:\AppServ\Apache2.2\bin;C:\AppServ\php5;C:\AppServ\MySQL\bin;;D:\eclipse;" />
     <property name="basedir" value="D:\Program\JAVA\LOS_HW1" />
     <property name="ant.java.version" value="1.7" />
     <property name="ant.core.lib" value="D:\eclipse\plugins\org.apache.ant_1.8.3.v201301120609\lib\ant.jar" />
@@ -117,73 +116,73 @@
     <property name="ant.project.invoked-targets" value="build-project,init,CrawlerTest" />
     <property name="env.PROCESSOR_LEVEL" value="6" />
   </properties>
-  <testcase classname="CrawlerTest" name="testconnecter" time="0.102" />
-  <testcase classname="CrawlerTest" name="testspliter" time="0.068" />
-  <testcase classname="CrawlerTest" name="testmySQL_storage" time="0.005">
+  <testcase classname="CrawlerTest" name="testconnecter" time="0.198" />
+  <testcase classname="CrawlerTest" name="testspliter" time="0.275" />
+  <testcase classname="CrawlerTest" name="testmySQL_storage" time="0.004">
     <failure message="單元測試尚未撰寫" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: 單元測試尚未撰寫
 	at CrawlerTest.testmySQL_storage(CrawlerTest.java:31)
 </failure>
   </testcase>
-  <system-out><![CDATA[  					<h3><a href="/news/20131211/305903.htm">寒冬送暖　寶貝小腳ㄚ </a></h3>
-  					<h3><a href="/news/20131211/305884.htm">口腔癌治療3歷程好慘　拒吃菸酒檳榔免受難 </a></h3>
-  					<h3><a href="/news/20131211/305948.htm">愛買好康資訊　任天堂3DS XL+瑪莉歐兄弟2遊戲片免8千 </a></h3>
-  					<h3><a href="/news/20131211/305940.htm">中職／桃猿公告第二波異動名單　黃欽智、林旺億遭釋出 </a></h3>
-  					<h3><a href="/news/20131211/305944.htm">冬聯／客座捕手教練金田進　強調動作流暢度 </a></h3>
-  					<h3><a href="/news/20131211/305945.htm">垃圾袋+購物袋！北市「環保二次袋」233門市買的到 </a></h3>
-  					<h3><a href="/news/20131211/305929.htm">撤了1張糧商執照　農糧署：泉順還有8張 </a></h3>
-  					<h3><a href="/news/20131211/305872.htm">MLB／球隊重點球員　張家兄弟提前赴美 </a></h3>
-  					<h3><a href="/news/20131211/304967.htm">NOVA情報誌／4代交替 一觸即8　PC大吹整型風 </a></h3>
-  					<h3><a href="/news/20131211/305938.htm">商業周刊／南韓起薪高台灣3倍的代價　75%大學生瘋補習 </a></h3>
-  					<h3><a href="/news/20131211/305935.htm">NBA／Kobe爆扣拿20分　湖人仍輸太陽 </a></h3>
-  					<h3><a href="/news/20131211/305919.htm">惡母街頭虐女　反噴員警「我他媽是在教育！」 </a></h3>
-  					<h3><a href="/news/20131211/305933.htm">MLB／費城人先發三本柱瓦解　李、漢默斯皆可交易 </a></h3>
-  					<h3><a href="/news/20131211/305848.htm">赴日購物免稅全面化、滿5千即可退稅　最快2014年實施 </a></h3>
-  					<h3><a href="/news/20131211/305912.htm">范冰冰帶動充氣娃娃買氣　不被男網友放眼裡輸林志玲 </a></h3>
-  					<h3><a href="/news/20131211/305939.htm">秘戀象迷娘又劈腿？納豆悶：全世界都覺得我是花花公子 </a></h3>
-  					<h3><a href="/news/20131211/305920.htm">新北市創舉！12月14日起全聯粉紅購物袋可做為垃圾袋 </a></h3>
-  					<h3><a href="/news/20131211/305936.htm">國內上市企業　邁向800家里程碑 </a></h3>
-  					<h3><a href="/news/20131211/305871.htm">MLB／捱過Tommy John　江少慶、李振昌革命情感 </a></h3>
-  					<h3><a href="/news/20131211/305672.htm">草間彌生無限鏡屋　一間房間整個宇宙 </a></h3>
-  					<h3><a href="/news/20131211/305663.htm">榕樹學堂訊／常駐於秀峰之肺的地頭蛇 </a></h3>
-  					<h3><a href="/news/20131211/305740.htm">清秀正咩魏可人　熱血中途貓媽咪 </a></h3>
-  					<h3><a href="/news/20131211/305932.htm">國銀首例！北富銀承辦前海雙邊跨境人民幣貸款 </a></h3>
-  					<h3><a href="/news/20131211/305930.htm">日月光K7廠遭勒令停工　張平沼：恐影響2014年GDP </a></h3>
-  					<h3><a href="/news/20131211/305926.htm">冬聯／不少球員身體微恙　中職聯軍貧打3安、3連敗 </a></h3>
-  					<h3><a href="/news/20131211/305923.htm">HBL／淡商快速球風席捲　3連勝教頭不敢大意 </a></h3>
-  					<h3><a href="/news/20131211/305891.htm">張根碩賀微博突破1500萬　大曬性感鎖骨約定長城上熱舞 </a></h3>
-  					<h3><a href="/news/20131211/305335.htm">蕭培麗／找回《神奇的眼睛》 </a></h3>
-  					<h3><a href="/news/20131211/305928.htm">立院初審通過　券商權證避險證交稅降至千分之一 </a></h3>
-  					<h3><a href="/news/20131211/304961.htm">VOCE／解決乾燥困擾！令人稱羨的水潤美人 </a></h3>
-寒冬送暖　寶貝小腳ㄚ 
-口腔癌治療3歷程好慘　拒吃菸酒檳榔免受難 
-愛買好康資訊　任天堂3DS XL+瑪莉歐兄弟2遊戲片免8千 
-中職／桃猿公告第二波異動名單　黃欽智、林旺億遭釋出 
-冬聯／客座捕手教練金田進　強調動作流暢度 
-垃圾袋+購物袋！北市「環保二次袋」233門市買的到 
-撤了1張糧商執照　農糧署：泉順還有8張 
-MLB／球隊重點球員　張家兄弟提前赴美 
-NOVA情報誌／4代交替 一觸即8　PC大吹整型風 
-商業周刊／南韓起薪高台灣3倍的代價　75%大學生瘋補習 
-NBA／Kobe爆扣拿20分　湖人仍輸太陽 
-惡母街頭虐女　反噴員警「我他媽是在教育！」 
-MLB／費城人先發三本柱瓦解　李、漢默斯皆可交易 
-赴日購物免稅全面化、滿5千即可退稅　最快2014年實施 
-范冰冰帶動充氣娃娃買氣　不被男網友放眼裡輸林志玲 
-秘戀象迷娘又劈腿？納豆悶：全世界都覺得我是花花公子 
-新北市創舉！12月14日起全聯粉紅購物袋可做為垃圾袋 
-國內上市企業　邁向800家里程碑 
-MLB／捱過Tommy John　江少慶、李振昌革命情感 
-草間彌生無限鏡屋　一間房間整個宇宙 
-榕樹學堂訊／常駐於秀峰之肺的地頭蛇 
-清秀正咩魏可人　熱血中途貓媽咪 
-國銀首例！北富銀承辦前海雙邊跨境人民幣貸款 
-日月光K7廠遭勒令停工　張平沼：恐影響2014年GDP 
-冬聯／不少球員身體微恙　中職聯軍貧打3安、3連敗 
-HBL／淡商快速球風席捲　3連勝教頭不敢大意 
-張根碩賀微博突破1500萬　大曬性感鎖骨約定長城上熱舞 
-蕭培麗／找回《神奇的眼睛》 
-立院初審通過　券商權證避險證交稅降至千分之一 
-VOCE／解決乾燥困擾！令人稱羨的水潤美人 
+  <system-out><![CDATA[  					<h3><a href="/news/20131211/306070.htm">蔡學良案烏龍？國防部：高院要求做「人體彈道測試」 </a></h3>
+  					<h3><a href="/news/20131211/306074.htm">HBL／安樂爆冷退北一女　衛冕軍永仁3連勝晉級 </a></h3>
+  					<h3><a href="/news/20131211/306068.htm">長庚女大生險遭拉上車　嘉義警方追2嫌 </a></h3>
+  					<h3><a href="/news/20131211/306072.htm">冬聯／最年長赤堀大智4支4　拿第2座MVP </a></h3>
+  					<h3><a href="/news/20131211/306071.htm">2014新希望　馬英九：拼經濟讓民眾短期有感 </a></h3>
+  					<h3><a href="/news/20131211/305905.htm">新航學生方案　赴紐澳歐免費行李託運提升至40公斤 </a></h3>
+  					<h3><a href="/news/20131211/306065.htm">冬聯／日職狂敲14安　開打以來14場11勝 </a></h3>
+  					<h3><a href="/news/20131211/305772.htm">胰島素分泌促脂肪堆積　狂喝「健怡」可樂恐越減越肥 </a></h3>
+  					<h3><a href="/news/20131211/306064.htm">大陸霾害襲台趨緩　環署解除預警 </a></h3>
+  					<h3><a href="/news/20131211/306019.htm">好萊塢賠錢貨！亞當山德勒糗登榜首  帥哥萊恩也進榜 </a></h3>
+  					<h3><a href="/news/20131211/306063.htm">鬍鬚張連4年加薪　幾分甜加薪1成 </a></h3>
+  					<h3><a href="/news/20131211/306014.htm">兵變被討債　役男勒殺性侵三重母女起訴 </a></h3>
+  					<h3><a href="/news/20131211/306061.htm">觀光菁英養成班　送你出國進修 </a></h3>
+  					<h3><a href="/news/20131211/306060.htm">海倫清桃曾當洗碗工　時薪5美金 </a></h3>
+  					<h3><a href="/news/20131211/306059.htm">名模錢帥君談打工　話多被Fire </a></h3>
+  					<h3><a href="/news/20131211/306058.htm">星國開雙倍薪水　徵台灣幼教人才 </a></h3>
+  					<h3><a href="/news/20131211/306039.htm">不砍樹也能造紙！台南大理石商研發C2C認證「石頭紙」 </a></h3>
+  					<h3><a href="/news/20131211/306057.htm">王應傑：五千元創造億萬人生 </a></h3>
+  					<h3><a href="/news/20131211/306056.htm">元大寶來台指評論—天險之說遭破解　賣壓趁隙湧出籠 </a></h3>
+  					<h3><a href="/news/20131211/305464.htm">品嘗免費料理！　高雄烏魚文化節14日登場 </a></h3>
+  					<h3><a href="/news/20131211/306053.htm">公職等嘸人　碩博生占缺不公平？！ </a></h3>
+  					<h3><a href="/news/20131211/306055.htm">永豐選擇權評論—買賣權同升 </a></h3>
+  					<h3><a href="/news/20131211/306054.htm">永豐台指評論—金融續強指數衝新高　8500點得而復失 </a></h3>
+  					<h3><a href="/news/20131211/306052.htm">統一選擇權評論—賣買權未平倉比下降至1.09 </a></h3>
+  					<h3><a href="/news/20131211/306051.htm">鼎泰豐等知名企業　釋4千職缺 </a></h3>
+  					<h3><a href="/news/20131211/306050.htm">統一台指評論—多方偷襲8500　創高後遭空方痛擊反跌 </a></h3>
+  					<h3><a href="/news/20131211/306042.htm">清玉短袖制服不換季　寒流來內加長袖禁穿外套 </a></h3>
+  					<h3><a href="/news/20131211/306049.htm">考森林護管員　第1關先騎打檔車 </a></h3>
+  					<h3><a href="/news/20131211/306044.htm">速食店搶跨年「宅」商機　分享餐降價拼買氣　 </a></h3>
+  					<h3><a href="/news/20131211/306048.htm">雲品副總李慧娟　服務入心 </a></h3>
+蔡學良案烏龍？國防部：高院要求做「人體彈道測試」 
+HBL／安樂爆冷退北一女　衛冕軍永仁3連勝晉級 
+長庚女大生險遭拉上車　嘉義警方追2嫌 
+冬聯／最年長赤堀大智4支4　拿第2座MVP 
+2014新希望　馬英九：拼經濟讓民眾短期有感 
+新航學生方案　赴紐澳歐免費行李託運提升至40公斤 
+冬聯／日職狂敲14安　開打以來14場11勝 
+胰島素分泌促脂肪堆積　狂喝「健怡」可樂恐越減越肥 
+大陸霾害襲台趨緩　環署解除預警 
+好萊塢賠錢貨！亞當山德勒糗登榜首  帥哥萊恩也進榜 
+鬍鬚張連4年加薪　幾分甜加薪1成 
+兵變被討債　役男勒殺性侵三重母女起訴 
+觀光菁英養成班　送你出國進修 
+海倫清桃曾當洗碗工　時薪5美金 
+名模錢帥君談打工　話多被Fire 
+星國開雙倍薪水　徵台灣幼教人才 
+不砍樹也能造紙！台南大理石商研發C2C認證「石頭紙」 
+王應傑：五千元創造億萬人生 
+元大寶來台指評論—天險之說遭破解　賣壓趁隙湧出籠 
+品嘗免費料理！　高雄烏魚文化節14日登場 
+公職等嘸人　碩博生占缺不公平？！ 
+永豐選擇權評論—買賣權同升 
+永豐台指評論—金融續強指數衝新高　8500點得而復失 
+統一選擇權評論—賣買權未平倉比下降至1.09 
+鼎泰豐等知名企業　釋4千職缺 
+統一台指評論—多方偷襲8500　創高後遭空方痛擊反跌 
+清玉短袖制服不換季　寒流來內加長袖禁穿外套 
+考森林護管員　第1關先騎打檔車 
+速食店搶跨年「宅」商機　分享餐降價拼買氣　 
+雲品副總李慧娟　服務入心 
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

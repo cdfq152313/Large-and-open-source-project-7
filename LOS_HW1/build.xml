@@ -9,9 +9,6 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
-    
-    <property name="dist" location="dist"/>
-    
     <path id="LOS_HW1.classpath">
         <pathelement location="bin"/>
         <pathelement location="libs/hamcrest-core-1.3.jar"/>
@@ -31,15 +28,6 @@
     </target>
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
-    
-    <target name="dist" depends="build-subprojects,build-project" description="generate the distribution" >
-        <!-- 創建放置jar檔目錄 -->
-        <mkdir dir="${dist}/lib"/>
-        
-        <!-- 把build目錄內的所有檔案結構打包成一個TestProject.jar檔  -->
-        <jar jarfile="${dist}/lib/${ant.project.name}.jar" basedir="bin"/>
-    </target>
-    
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
@@ -80,7 +68,7 @@
             <fileset dir="${junit.output.dir}">
                 <include name="TEST-*.xml"/>
             </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
+            <report format="frames" todir="${junit.output.dir}\html\"/>
         </junitreport>
     </target>
 </project>
