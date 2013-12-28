@@ -1,14 +1,13 @@
 
-
 /**
  * @author chi
- * åŠŸèƒ½:
- * 1.å°‡ETtodayä¸Šçš„æ–°èæ¨™é¡Œæ“·å–å‡º
- * 2.å„²å­˜è‡³mySQL
+ * ¥\¯à:
+ * 1.±NETtoday¤Wªº·s»D¼ĞÃDÂ^¨ú¥X
+ * 2.Àx¦s¦ÜmySQL
  * 
  * Pattern:
- * Simple Factoryï¼Œä½¿ç”¨è€…å¯ä»¥ç”¢å‡ºPTTæˆ–æ˜¯ETtodayä¾†æºçš„ç‰©ä»¶
- * ç”¢å‡ºæ–°èæŠ“å–çš„ç‰©ä»¶é›†ä¸­åœ¨News_factory
+ * Simple Factory¡A¨Ï¥ÎªÌ¥i¥H²£¥XPTT©Î¬OETtoday¨Ó·½ªºª«¥ó
+ * ²£¥X·s»D§ì¨úªºª«¥ó¶°¤¤¦bNews_factory
  */
 public class HW1 {
 
@@ -22,11 +21,11 @@ public class HW1 {
 		
 	}
 	/**
-	 * æ–°èæŠ“å–ç‰©ä»¶ç”¢ç”Ÿ
+	 * ·s»D§ì¨úª«¥ó²£¥Í
 	 */
 	public static class News_factory{
 		/**
-		 * ç”¢ç”ŸæŠ“å–ETtodayæ–°èçš„ç‰©ä»¶
+		 * ²£¥Í§ì¨úETtoday·s»Dªºª«¥ó
 		 */
 		public static ETtodayCrawler get_ETtoday(){
 			ETtodayCrawler crawler = new ETtodayCrawler();
@@ -38,7 +37,7 @@ public class HW1 {
 			return crawler;
 		}
 		/**
-		 * ç”¢ç”ŸæŠ“å–Pttæ–°èçš„ç‰©ä»¶
+		 * ²£¥Í§ì¨úPtt·s»Dªºª«¥ó
 		 */
 		public static PttCrawler get_Ptt(){
 			PttCrawler crawler = new PttCrawler();

@@ -1,30 +1,46 @@
+import java.awt.event.KeyEvent;
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.net.Socket;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class talent_connect {
-	String host;
-	int portNum;
+	ExecutorService pool;
+	String host = "ptt.cc";
+	int portNum = 23;
+	Socket s;
+	public List<String> data = new ArrayList<String>();
+	/**
+	 * set socket and connect to the ptt.cc, use two thread to sent command and read data
+	 * command to enter the Gossping
+	 */
 	public talent_connect() {
-		host = "ptt.cc";
-		portNum = 23;
+		
 		try {
-			Socket s = new Socket(host,portNum);
-			/*new Pipe(s.getInputStream(),System.out).start();
-			new Pipe(System.in,s.getOutputStream()).start();
-			new Pipe(new ByteArrayInputStream("chihuai".getBytes()),s.getOutputStream()).start();
-			new Pipe(new ByteArrayInputStream("ch350006".getBytes()),s.getOutputStream()).start();*/
-			new Pipe_2(s.getInputStream(), System.out);
-			new Pipe_2(System.in,s.getInputStream(),s.getOutputStream());
-			new Pipe_2(new ByteArrayInputStream("chihuai\r".getBytes()),s.getInputStream(),s.getOutputStream());
-			new Pipe_2(new ByteArrayInputStream("ch350006\r".getBytes()),s.getInputStream(),s.getOutputStream());
+			s = new Socket(host,portNum);
+			new Pipe_2(s.getInputStream());
+			String[] cmd = {"chihuai","ch350006"," ","sGossiping\r ","P","P"};
+			new Pipe_2(cmd, s.getOutputStream());
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -33,87 +49,182 @@ public class talent_connect {
 		}
 		System.out.println("Connection OK!");
 	}
-}
-
-/*class Pipe extends Thread{
-	InputStreamReader InS;
-	PrintStream OutS;
-	 
-	public Pipe(InputStream InS,OutputStream OutS){
-	    try {
-			this.InS = new InputStreamReader(InS, "Big5");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	    this.OutS = new PrintStream(OutS);
+	/**
+	 * 
+	 * @param str the title without spliter
+	 * @return the ptt news title
+	 */
+	public String spliter(String str){
+		String[] s;
+		String[] t;
+        s = str.split("]");
+        System.out.println(s[1]);
+        t = s[1].split("");
+		return t[0];
+        
 	}
-	public void run(){
-		BufferedReader br = new BufferedReader(InS);
-		String line;
-		try {
-			while((line = br.readLine()) != null){
-				OutS.print(line);
-				OutS.print("\r\n");
-				OutS.flush();
+	/**
+	 * 
+	 * @param str the news title sent to the database
+	 */
+	public void mySQL_storage(String str){
+		String driver = "com.mysql.jdbc.Driver"; 
+        String url = "jdbc:mysql://localhost/chi"; 
+        String user = "root"; 
+        String password = "10719293";
+        Connection conn;
+        Statement stmt;
+        try { 
+            Class.forName(driver); 
+            conn = DriverManager.getConnection(url, user, password);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            if(conn != null && !conn.isClosed()) {
+
+        		ResultSet result = stmt.executeQuery("SELECT * FROM ptt WHERE title='" + str + "'");
+        		if(!result.first()){
+        			result = stmt.executeQuery("SELECT * FROM ptt");
+        			result.moveToInsertRow(); 
+        			result.updateString("title", str);
+        			result.insertRow();
+            	}
+                conn.close();
+            }
+        } 
+        catch(ClassNotFoundException e) { 
+            System.out.println("�䤣���X�ʵ{�����O"); 
+            e.printStackTrace(); 
+        } 
+        catch(SQLException e) { 
+            e.printStackTrace(); 
+        }
+	}
+	/**
+	 * 
+	 * @author chi
+	 * the pipe that send command to socket and get data from socket
+	 */
+	class Pipe_2{
+		/**
+		 * 
+		 * @param cmd the command send to socket
+		 * @param OutS send cmd to the outputstream
+		 * constructor which start a thread sned cmd to socket
+		 */
+		public Pipe_2(String[] cmd, OutputStream OutS){
+			
+			//最多同時執行2執行緒
+			pool = Executors.newFixedThreadPool(2);
+
+			//建立新執行緒
+			pool.execute(new input_array(cmd, OutS));
+
+		}
+		/**
+		 * 
+		 * @param socket_ins socket_ins socket puts the data to the inputstream
+		 * constructor which start a thread that socket send data to outputstream 
+		 */
+		public Pipe_2(InputStream socket_ins){
+			ExecutorService pool;
+			//最多同時執行2執行緒
+			pool = Executors.newFixedThreadPool(1);
+
+			//建立新執行緒
+			pool.execute(new output(socket_ins));
+		}
+		/**
+		 * 
+		 * @author chi
+		 * use bufferedwriter write the cmd to the socket
+		 */
+		class input_array extends Thread{
+			BufferedReader br;
+			BufferedWriter bw;
+			String[] cmd;
+			public input_array(String[] cmd, OutputStream OutS){
+				
+				this.cmd = cmd;
+				bw = new BufferedWriter(new OutputStreamWriter(OutS));
 			}
-		}
-		catch (IOException e) {
-			throw new RuntimeException(e.getMessage());
-		}
-	}
-}*/
+			
+			public void run(){
+				for(int i = 0; i < cmd.length; i++){
+					InputStream InS = new ByteArrayInputStream(cmd[i].getBytes());
 
-class Pipe_2{
-	public Pipe_2(InputStream InS, InputStream socket_ins, OutputStream OutS){
-		new input(InS, OutS).start();
-		new output(socket_ins).start();
-	}
-	public Pipe_2(InputStream socket_ins, OutputStream OutS){
-		new output(socket_ins).start();
-	}
-	class input extends Thread{
-		PrintStream OutS;
-		BufferedReader br;
-		public input(InputStream InS, OutputStream OutS){
-			br = new BufferedReader(new InputStreamReader(InS));
-			this.OutS = new PrintStream(OutS);
-		}
-		
-		public void run(){
-			String line;
-			try {
-				while((line = br.readLine())!=null){
-					OutS.println(line);
-					OutS.flush();
+					br = new BufferedReader(new InputStreamReader(InS));
+					
+					String str;
+					try {
+						while((str = br.readLine())!=null){
+							bw.write(str);
+							if(i < 4)
+								bw.write('\r');
+							bw.flush();
+						}
+					}
+					catch (IOException e) {
+						throw new RuntimeException(e.getMessage());
+					}
+					if(i == 2){
+						try {
+							Thread.sleep(4000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+					else{
+						try {
+							Thread.sleep(200);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
 				}
 			}
-			catch (IOException e) {
-				throw new RuntimeException(e.getMessage());
-			}
-		}
-	} 
-	class output extends Thread{
-		InputStreamReader InS;
-		public output(InputStream InS){
-			try {
-				this.InS = new InputStreamReader(InS, "Big5");
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		public void run(){
-			BufferedReader br = new BufferedReader(InS);
-			String line;
-			try {
-				while((line = br.readLine())!=null){
-					System.out.println(line);
+		} 
+		/**
+		 * 
+		 * @author chi
+		 * use bufferedreader read the data which the socket send to the inputstream
+		 */
+		class output extends Thread{
+			InputStreamReader InS;
+			
+			public output(InputStream InS){
+				try {
+					this.InS = new InputStreamReader(InS, "Big5");
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
-			catch (IOException e) {
-				throw new RuntimeException(e.getMessage());
+			public void run(){
+				BufferedReader br = new BufferedReader(InS);
+				String line;
+				try {
+					while((line = br.readLine())!=null){
+						String pattern = "新聞|爆掛|問卦";
+						Pattern pattern_title = Pattern.compile(pattern);
+						Matcher match = pattern_title.matcher(line);
+						if(match.find() == true){
+							String temp = spliter(line);
+							data.add(temp);
+							mySQL_storage(temp);
+							//System.out.println(line);
+							//System.out.flush();
+						}
+						line = "";
+						//System.out.println(line);
+						//System.out.flush();
+					}
+				}
+				catch (IOException e) {
+					throw new RuntimeException(e.getMessage());
+				}
 			}
 		}
 	}
+
 }

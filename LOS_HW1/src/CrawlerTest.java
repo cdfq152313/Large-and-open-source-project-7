@@ -1,7 +1,7 @@
 import junit.framework.TestCase;
 /**
- * å°å‡ºæ•¸æ“šä»¥é©—è­‰parseæ˜¯å¦æ­£ç¢º
- * çµæœæœƒå‡ºç¾åœ¨console
+ * ¦L¥X¼Æ¾Ú¥HÅçÃÒparse¬O§_¥¿½T
+ * µ²ªG·|¥X²{¦bconsole
  */
 public class CrawlerTest extends TestCase {
     private ETtodayCrawler crawler;
@@ -28,6 +28,6 @@ public class CrawlerTest extends TestCase {
     }
 	
 	public void testmySQL_storage() {
-        fail("å–®å…ƒæ¸¬è©¦å°šæœªæ’°å¯«");
+        fail("³æ¤¸´ú¸Õ©|¥¼¼¶¼g");
     }
 } 
