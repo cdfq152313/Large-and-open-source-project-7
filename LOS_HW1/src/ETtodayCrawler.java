@@ -21,28 +21,28 @@ import java.util.regex.Pattern;
 public class ETtodayCrawler{
 	private List<String> data = new ArrayList<String>();
 	/**
-	 * ³s±µETtodayªº·s»Dºô­¶
-	 * ¨Ã§Q¥Îregular expression¨ú±o¸Ó­¶§t¦³·s»D¼ÐÃDªºhtml½X
-	 * @param s §t¦³·s»D¼ÐÃDªºregular expression
+	 * ï¿½sï¿½ï¿½ETtodayï¿½ï¿½ï¿½sï¿½Dï¿½ï¿½ï¿½ï¿½
+	 * ï¿½Ã§Qï¿½ï¿½regular expressionï¿½ï¿½oï¿½Ó­ï¿½ï¿½tï¿½ï¿½ï¿½sï¿½Dï¿½ï¿½ï¿½Dï¿½ï¿½htmlï¿½X
+	 * @param s ï¿½tï¿½ï¿½ï¿½sï¿½Dï¿½ï¿½ï¿½Dï¿½ï¿½regular expression
 	 */
 	public void connecter(){
 		String s = "<h3><a href=\".*\">.*</a></h3>$";
 		Pattern pattern_title = Pattern.compile(s);
 		
 		try {
-			//«Ø¥ßHTTP³s½uªº¥Øªº¦a
+			//ï¿½Ø¥ï¿½HTTPï¿½sï¿½uï¿½ï¿½ï¿½Øªï¿½ï¿½a
 			URL url = new URL("http://www.ettoday.net/news/news-list.htm");
-			//§Q¥ÎURLªºopenConnection()¨Ó«Ø¥ß³s½u
+			//ï¿½Qï¿½ï¿½URLï¿½ï¿½openConnection()ï¿½Ó«Ø¥ß³sï¿½u
 			HttpURLConnection uc = (HttpURLConnection) url.openConnection();
 			uc.connect();
-			//±N³s½u¨ú±oªº¦^À³¸ü¤J¨ì¤@­ÓInputStream¤¤¡A¨Ã¥B¬OUTF8½s½X
+			//ï¿½Nï¿½sï¿½uï¿½ï¿½oï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½@ï¿½ï¿½InputStreamï¿½ï¿½ï¿½Aï¿½Ã¥Bï¿½OUTF8ï¿½sï¿½X
 			InputStreamReader inputStreamReader = new InputStreamReader(uc.getInputStream(), "UTF8");
-			//¬°¼Ð·Ç¿é¤J¦ê¬y«Ø¥ß½w½Ä°Ïª«¥ó
+			//ï¿½ï¿½ï¿½Ð·Ç¿ï¿½Jï¿½ï¿½yï¿½Ø¥ß½wï¿½Ä°Ïªï¿½ï¿½ï¿½
             BufferedReader br = new BufferedReader(inputStreamReader);
 			String str = ""; 
-			//Åª¨ú½w½Ä°Ïª«¥ó¡A¨Ï¥Îreadline¤èªk
+			//Åªï¿½ï¿½wï¿½Ä°Ïªï¿½ï¿½ï¿½Aï¿½Ï¥ï¿½readlineï¿½ï¿½k
 			while((str = br.readLine()) != null) {
-				//²Å¦X·s»D¼ÐÃDªº¦æ
+				//ï¿½Å¦Xï¿½sï¿½Dï¿½ï¿½ï¿½Dï¿½ï¿½ï¿½ï¿½
 				Matcher match = pattern_title.matcher(str);
 				if(match.find() == true){
 					data.add(str);
@@ -58,9 +58,9 @@ public class ETtodayCrawler{
 		}
 	}
 	/**
-	 * ±Nhtml¼ÐÅÒ»P·s»D¼ÐÃD¤À¶}
-	 * @param s Àx¦s²Ä¤@¦¸±Nhtml¼ÐÅÒ¤À¶}»P·s»D¼ÐÃD(«e¬q)
-	 * @param t Àx¦s²Ä¤G¦¸±Nhtml¼ÐÅÒ¤À¶}»P·s»D¼ÐÃD(«á¬q)
+	 * ï¿½Nhtmlï¿½ï¿½ï¿½Ò»Pï¿½sï¿½Dï¿½ï¿½ï¿½Dï¿½ï¿½ï¿½}
+	 * @param s ï¿½xï¿½sï¿½Ä¤@ï¿½ï¿½ï¿½Nhtmlï¿½ï¿½ï¿½Ò¤ï¿½ï¿½}ï¿½Pï¿½sï¿½Dï¿½ï¿½ï¿½D(ï¿½eï¿½q)
+	 * @param t ï¿½xï¿½sï¿½Ä¤Gï¿½ï¿½ï¿½Nhtmlï¿½ï¿½ï¿½Ò¤ï¿½ï¿½}ï¿½Pï¿½sï¿½Dï¿½ï¿½ï¿½D(ï¿½ï¿½q)
 	 */
 	public void spliter(){
 		String[] s;
@@ -72,7 +72,7 @@ public class ETtodayCrawler{
         }
 	}
 	/**
-	 * ¦L¥Xdata¤º¸ê®Æ¥H«KÀË¬d 
+	 * ï¿½Lï¿½Xdataï¿½ï¿½ï¿½ï¿½Æ¥Hï¿½Kï¿½Ë¬d 
 	 */
 	public void printer(){
 		for(int i = 0; i < data.size(); i++){ 
@@ -81,53 +81,62 @@ public class ETtodayCrawler{
         }
 	}
 	/**
-	 * ±N§ä¨ìªº·s»D¼ÐÃDÀx¦s¦ÜmySQL
-	 * @param driver ¸ü¤J»Pµù¥UJDBCÅX°Êµ{¦¡
-	 * @param url ´£¨ÑJDBC URL
-	 * @param user mySQL±b¸¹
-	 * @param password mySQL±K½X
+	 * ï¿½Nï¿½ï¿½ìªºï¿½sï¿½Dï¿½ï¿½ï¿½Dï¿½xï¿½sï¿½ï¿½mySQL
+	 * @param driver ï¿½ï¿½Jï¿½Pï¿½ï¿½UJDBCï¿½Xï¿½Êµ{ï¿½ï¿½
+	 * @param url ï¿½ï¿½ï¿½ï¿½JDBC URL
+	 * @param user mySQLï¿½bï¿½ï¿½
+	 * @param password mySQLï¿½Kï¿½X
 	 */
 	public void mySQL_storage(){
-		String driver = "com.mysql.jdbc.Driver"; 
-		//jdbc:mysql://¥D¾÷¦WºÙ:³s±µ°ð/¸ê®Æ®w¦WºÙ?°Ñ¼Æ1=­È1&°Ñ¼Æ2=­È2
-        String url = "jdbc:mysql://localhost/chi"; 
-        String user = "root"; 
-        String password = "10719293";
+		String driver = "org.postgresql.Driver"; 
+        String url = "jdbc:postgresql://210.61.10.89/"; 
+        String user = "Team7"; 
+        String password = "2013postgres";
         Connection conn;
         Statement stmt;
         try { 
-        	//¸ü¤J»Pµù¥UJDBCÅX°Êµ{¦¡
-            Class.forName(driver); 
-            //±qDriverManager¨ú±oConnection
+        	//ï¿½ï¿½Jï¿½Pï¿½ï¿½UJDBCï¿½Xï¿½Êµ{ï¿½ï¿½
+			Class.forName(driver).newInstance();
+
+            //ï¿½qDriverManagerï¿½ï¿½oConnection
             conn = DriverManager.getConnection(url, user, password);
-            //¨ú±o Statementª«¥ó¡A°õ¦æSQL±Ô­z¨Ã¨ú±o°õ¦æ¤§«áªºµ²ªG
+            //ï¿½ï¿½o Statementï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½SQLï¿½Ô­zï¿½Ã¨ï¿½oï¿½ï¿½ï¿½æ¤§ï¿½áªºï¿½ï¿½ï¿½G
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             if(conn != null && !conn.isClosed()) {
-                //System.out.println("¸ê®Æ®w³s½u´ú¸Õ¦¨¥\¡I");
-            	//·s¼W¸ê®Æ
+                //System.out.println("ï¿½ï¿½Æ®wï¿½sï¿½uï¿½ï¿½Õ¦ï¿½ï¿½\ï¿½I");
+            	//ï¿½sï¿½Wï¿½ï¿½ï¿½
             	for(int i = 0; i < data.size(); i++){ 
-            		//´M§ä¸ê®Æ¬O§_¤w¦s¦b
-            		//ResultSetª«¥ó¡A¥NªíÅÜ§ó©Î¬d¸ßªºµ²ªG
+            		//ï¿½Mï¿½ï¿½ï¿½Æ¬Oï¿½_ï¿½wï¿½sï¿½b
+            		//ResultSetï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½ï¿½ï¿½Ü§ï¿½Î¬dï¿½ßªï¿½ï¿½ï¿½ï¿½G
             		ResultSet result = stmt.executeQuery("SELECT * FROM ettoday WHERE title='" + data.get(i) + "'");
-            		//­Y¤£¦s¦b
+            		//ï¿½Yï¿½ï¿½ï¿½sï¿½b
             		if(!result.first()){
-            			//¨Ï¥ÎmoveToInsertRow()²¾¦Ü·s¼W¸ê®Æ³B
+            			//ï¿½Ï¥ï¿½moveToInsertRow()ï¿½ï¿½ï¿½Ü·sï¿½Wï¿½ï¿½Æ³B
             			result = stmt.executeQuery("SELECT * FROM ettoday");
             			result.moveToInsertRow(); 
             			result.updateString("title", data.get(i));
             			result.insertRow();
                 	}
     	        }
-            	//Ãö³¬»P¸ê®Æ®wªº³s½u
-                conn.close();
+            	//ï¿½ï¿½ï¿½ï¿½ï¿½Pï¿½ï¿½Æ®wï¿½ï¿½ï¿½sï¿½u
+            	
             }
+            conn.close();
         } 
         catch(ClassNotFoundException e) { 
-            System.out.println("§ä¤£¨ìÅX°Êµ{¦¡Ãþ§O"); 
+            System.out.println("ï¿½ä¤£ï¿½ï¿½ï¿½Xï¿½Êµ{ï¿½ï¿½ï¿½ï¿½ï¿½O"); 
             e.printStackTrace(); 
         } 
         catch(SQLException e) { 
             e.printStackTrace(); 
         }
+        catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+        catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 	}
 }

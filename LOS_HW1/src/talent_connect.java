@@ -25,7 +25,9 @@ import java.util.regex.Pattern;
 
 
 public class talent_connect {
-	ExecutorService pool;
+	//最多同時執行2執行緒
+	ExecutorService pool = Executors.newFixedThreadPool(2);
+	Boolean flag = true;
 	String host = "ptt.cc";
 	int portNum = 23;
 	Socket s;
@@ -47,6 +49,15 @@ public class talent_connect {
 			System.out.println("Connection fail!");
 			return;
 		}
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		flag = false;
+		pool.shutdownNow();
+		System.out.println(pool.isTerminated());
 		System.out.println("Connection OK!");
 	}
 	/**
@@ -58,7 +69,7 @@ public class talent_connect {
 		String[] s;
 		String[] t;
         s = str.split("]");
-        System.out.println(s[1]);
+        //System.out.println(s[1]);
         t = s[1].split("");
 		return t[0];
         
@@ -68,10 +79,10 @@ public class talent_connect {
 	 * @param str the news title sent to the database
 	 */
 	public void mySQL_storage(String str){
-		String driver = "com.mysql.jdbc.Driver"; 
-        String url = "jdbc:mysql://localhost/chi"; 
-        String user = "root"; 
-        String password = "10719293";
+		String driver = "org.postgresql.Driver"; 
+        String url = "jdbc:postgresql://210.61.10.89/"; 
+        String user = "Team7"; 
+        String password = "2013postgres";
         Connection conn;
         Statement stmt;
         try { 
@@ -86,9 +97,12 @@ public class talent_connect {
         			result.moveToInsertRow(); 
         			result.updateString("title", str);
         			result.insertRow();
+        			result.close();
             	}
-                conn.close();
+        		
             }
+            stmt.close();
+            conn.close();
         } 
         catch(ClassNotFoundException e) { 
             System.out.println("�䤣���X�ʵ{�����O"); 
@@ -111,12 +125,8 @@ public class talent_connect {
 		 * constructor which start a thread sned cmd to socket
 		 */
 		public Pipe_2(String[] cmd, OutputStream OutS){
-			
-			//最多同時執行2執行緒
-			pool = Executors.newFixedThreadPool(2);
-
 			//建立新執行緒
-			pool.execute(new input_array(cmd, OutS));
+			pool.submit(new input_array(cmd, OutS));
 
 		}
 		/**
@@ -125,12 +135,8 @@ public class talent_connect {
 		 * constructor which start a thread that socket send data to outputstream 
 		 */
 		public Pipe_2(InputStream socket_ins){
-			ExecutorService pool;
-			//最多同時執行2執行緒
-			pool = Executors.newFixedThreadPool(1);
-
 			//建立新執行緒
-			pool.execute(new output(socket_ins));
+			pool.submit(new output(socket_ins));
 		}
 		/**
 		 * 
@@ -204,7 +210,7 @@ public class talent_connect {
 				BufferedReader br = new BufferedReader(InS);
 				String line;
 				try {
-					while((line = br.readLine())!=null){
+					while((line = br.readLine())!=null && flag){
 						String pattern = "新聞|爆掛|問卦";
 						Pattern pattern_title = Pattern.compile(pattern);
 						Matcher match = pattern_title.matcher(line);
@@ -216,7 +222,6 @@ public class talent_connect {
 							//System.out.flush();
 						}
 						line = "";
-						//System.out.println(line);
 						//System.out.flush();
 					}
 				}

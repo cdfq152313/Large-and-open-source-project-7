@@ -1,13 +1,24 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Properties;
+import java.sql.PreparedStatement;
 
 /**
  * @author chi
- * ¥\¯à:
- * 1.±NETtoday¤Wªº·s»D¼ÐÃDÂ^¨ú¥X
- * 2.Àx¦s¦ÜmySQL
+ * ï¿½\ï¿½ï¿½:
+ * 1.ï¿½NETtodayï¿½Wï¿½ï¿½ï¿½sï¿½Dï¿½ï¿½ï¿½Dï¿½^ï¿½ï¿½X
+ * 2.ï¿½xï¿½sï¿½ï¿½mySQL
  * 
  * Pattern:
- * Simple Factory¡A¨Ï¥ÎªÌ¥i¥H²£¥XPTT©Î¬OETtoday¨Ó·½ªºª«¥ó
- * ²£¥X·s»D§ì¨úªºª«¥ó¶°¤¤¦bNews_factory
+ * Simple Factoryï¿½Aï¿½Ï¥ÎªÌ¥iï¿½Hï¿½ï¿½ï¿½XPTTï¿½Î¬OETtodayï¿½Ó·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½Xï¿½sï¿½Dï¿½ï¿½ï¿½ï¿½ó¶°¤ï¿½ï¿½bNews_factory
  */
 public class HW1 {
 
@@ -17,15 +28,54 @@ public class HW1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ETtodayCrawler ET_news = News_factory.get_ETtoday();
-		PttCrawler Ptt_news = News_factory.get_Ptt();
+		//System.out.println("ptt-------------");
 		
+		PttCrawler Ptt_news = News_factory.get_Ptt();
+		//System.out.println("end");
+		
+		
+		DatabaseCrawler pttDb = new DatabaseCrawler("ptt");
+		DatabaseCrawler ettodayDb = new DatabaseCrawler("ettoday");
+		ArrayList<News> pttnews = pttDb.GetNews();
+		ArrayList<News> ettodaynews = ettodayDb.GetNews();
+
+		for(int i = 0; i < pttnews.size(); ++i){
+		    //System.out.println(pttnews.get(i).getTitle());	
+		//System.out.println("-----------------------");
+		}
+		//System.out.println("-----------------------");
+		for(int i = 0; i < ettodaynews.size(); ++i){
+		    //System.out.println(ettodaynews.get(i).getTitle());	
+		//System.out.println("-----------------------");
+		}
+		//System.out.println(""+ pttnews.size());
+		//System.out.println(""+ ettodaynews.size());
+		Similarity s = new Similarity(pttnews, ettodaynews);
+		ArrayList<Pair> result = s.getSimPoints();
+		Collections.sort(result, new Comparator<Pair>(){
+
+			@Override
+			public int compare(Pair o1, Pair o2) {
+				// TODO Auto-generated method stub
+				return o2.point - o1.point;
+			}
+			
+		});
+		for(int i = 0; i < result.size(); ++i){
+			System.out.println("("+result.get(i).index1 + "," + result.get(i).index2 + "):" + result.get(i).point);
+			System.out.println(result.get(i).News1.getTitle() + ","+result.get(i).News2.getTitle());
+
+		}
+		
+		return;
 	}
+
 	/**
-	 * ·s»D§ì¨úª«¥ó²£¥Í
+	 * ï¿½sï¿½Dï¿½ï¿½ï¿½ó²£¥ï¿½
 	 */
 	public static class News_factory{
 		/**
-		 * ²£¥Í§ì¨úETtoday·s»Dªºª«¥ó
+		 * ï¿½ï¿½ï¿½Í§ï¿½ï¿½ETtodayï¿½sï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 */
 		public static ETtodayCrawler get_ETtoday(){
 			ETtodayCrawler crawler = new ETtodayCrawler();
@@ -37,7 +87,7 @@ public class HW1 {
 			return crawler;
 		}
 		/**
-		 * ²£¥Í§ì¨úPtt·s»Dªºª«¥ó
+		 * ï¿½ï¿½ï¿½Í§ï¿½ï¿½Pttï¿½sï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 */
 		public static PttCrawler get_Ptt(){
 			PttCrawler crawler = new PttCrawler();
