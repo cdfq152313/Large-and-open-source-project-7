@@ -49,14 +49,14 @@ public class talent_connect {
 			System.out.println("Connection fail!");
 			return;
 		}
-		try {
+		/*try {
 			Thread.sleep(30000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		flag = false;
-		pool.shutdownNow();
+		pool.shutdownNow();*/
 		System.out.println(pool.isTerminated());
 		System.out.println("Connection OK!");
 	}

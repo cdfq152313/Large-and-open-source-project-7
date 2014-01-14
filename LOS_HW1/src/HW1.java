@@ -62,8 +62,10 @@ public class HW1 {
 			
 		});
 		for(int i = 0; i < result.size(); ++i){
-			System.out.println("("+result.get(i).index1 + "," + result.get(i).index2 + "):" + result.get(i).point);
-			System.out.println(result.get(i).News1.getTitle() + ","+result.get(i).News2.getTitle());
+			if(result.get(i).point > 0){
+				System.out.println("("+result.get(i).index1 + "," + result.get(i).index2 + "):" + result.get(i).point);
+				System.out.println(result.get(i).News1.getTitle() + ","+result.get(i).News2.getTitle());
+			}
 
 		}
 		
