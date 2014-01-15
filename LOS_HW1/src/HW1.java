@@ -30,7 +30,7 @@ public class HW1 {
 		ETtodayCrawler ET_news = News_factory.get_ETtoday();
 		//System.out.println("ptt-------------");
 		
-		ttCrawler Ptt_news = News_factory.get_Ptt();
+		PttCrawler Ptt_news = News_factory.get_Ptt();
 		//System.out.println("end");
 		
 		
