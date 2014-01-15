@@ -70,7 +70,7 @@ public class HW1 {
 		}
 		System.out.println("hiiii");
 	        System.out.println("qq");
-	        System.out.println("qq");
+	        out.println("qq");
 		return;
 	}
 
