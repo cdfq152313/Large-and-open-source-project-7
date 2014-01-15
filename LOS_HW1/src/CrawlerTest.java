@@ -1,7 +1,7 @@
 import junit.framework.TestCase;
 /**
- * 印出數據以驗證parse是否正確
- * 結果會出現在console
+ * 
+ *
  */
 public class CrawlerTest extends TestCase {
     private ETtodayCrawler crawler;
@@ -28,6 +28,6 @@ public class CrawlerTest extends TestCase {
     }
 	
 	public void testmySQL_storage() {
-        fail("單元測試尚未撰寫");
+        fail("testmySQL_storage");
     }
 } 
