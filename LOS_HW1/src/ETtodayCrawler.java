@@ -124,7 +124,7 @@ public class ETtodayCrawler{
             conn.close();
         } 
         catch(ClassNotFoundException e) { 
-            System.out.println("�䤣���X�ʵ{�����O"); 
+            System.out.println("error");
             e.printStackTrace(); 
         } 
         catch(SQLException e) { 
