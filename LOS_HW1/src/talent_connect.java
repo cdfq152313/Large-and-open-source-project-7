@@ -125,7 +125,6 @@ public class talent_connect {
 		 * constructor which start a thread sned cmd to socket
 		 */
 		public Pipe_2(String[] cmd, OutputStream OutS){
-			//建立新執行緒
 			pool.submit(new input_array(cmd, OutS));
 
 		}
@@ -135,7 +134,6 @@ public class talent_connect {
 		 * constructor which start a thread that socket send data to outputstream 
 		 */
 		public Pipe_2(InputStream socket_ins){
-			//建立新執行緒
 			pool.submit(new output(socket_ins));
 		}
 		/**
