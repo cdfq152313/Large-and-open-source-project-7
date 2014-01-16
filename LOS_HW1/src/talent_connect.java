@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 
 
 public class talent_connect {
-	//最多同時執行2執行緒
+
 	ExecutorService pool = Executors.newFixedThreadPool(2);
 	Boolean flag = true;
 	String host = "ptt.cc";
@@ -105,7 +105,7 @@ public class talent_connect {
             conn.close();
         } 
         catch(ClassNotFoundException e) { 
-            System.out.println("�䤣���X�ʵ{�����O"); 
+            System.out.println("error");
             e.printStackTrace(); 
         } 
         catch(SQLException e) { 
