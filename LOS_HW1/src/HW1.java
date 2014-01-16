@@ -10,16 +10,6 @@ import java.util.List;
 import java.util.Properties;
 import java.sql.PreparedStatement;
 
-/**
- * @author chi
- * �\��:
- * 1.�NETtoday�W���s�D���D�^��X
- * 2.�x�s��mySQL
- * 
- * Pattern:
- * Simple Factory�A�ϥΪ̥i�H���XPTT�άOETtoday�ӷ�������
- * ���X�s�D����󶰤��bNews_factory
- */
 public class HW1 {
 
 	/**
@@ -73,13 +63,7 @@ public class HW1 {
 		return;
 	}
 
-	/**
-	 * �s�D���󲣥�
-	 */
 	public static class News_factory{
-		/**
-		 * ���ͧ��ETtoday�s�D������
-		 */
 		public static ETtodayCrawler get_ETtoday(){
 			ETtodayCrawler crawler = new ETtodayCrawler();
 			crawler.connecter();
@@ -89,9 +73,6 @@ public class HW1 {
 			
 			return crawler;
 		}
-		/**
-		 * ���ͧ��Ptt�s�D������
-		 */
 		public static PttCrawler get_Ptt(){
 			PttCrawler crawler = new PttCrawler();
 			crawler.connecter();
