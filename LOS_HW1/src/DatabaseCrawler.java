@@ -13,7 +13,6 @@ public class DatabaseCrawler {
 	private ArrayList<News> NewsList = new ArrayList<News>(); 
 	public DatabaseCrawler(String news_database){
 		String driver = "org.postgresql.Driver"; 
-		//jdbc:mysql://�D���W��:�s����/��Ʈw�W��?�Ѽ�1=��1&�Ѽ�2=��2
         String url = "jdbc:postgresql://210.61.10.89/"; 
         String user = "Team7"; 
         String password = "2013postgres";
@@ -40,7 +39,7 @@ public class DatabaseCrawler {
             conn.close();
         } 
         catch(ClassNotFoundException e) { 
-            System.out.println("�䤣���X�ʵ{�����O"); 
+            System.out.println("error");
             e.printStackTrace(); 
         } 
         catch(SQLException e) { 
